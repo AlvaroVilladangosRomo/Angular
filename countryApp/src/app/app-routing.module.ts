@@ -1,21 +1,32 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './shared/pages/homePage/homePage.component';
 import { AboutPageComponent } from './shared/pages/aboutPage/aboutPage.component';
+import { ContactPageComponent } from './shared/pages/contactPage/contactPage.component';
 
 const routes: Routes = [
   {
-    path: 'home',
-    component: HomePageComponent
+    path: '',
+    component: HomePageComponent,
   },
   {
     path: 'about',
-    component: AboutPageComponent
+    component: AboutPageComponent,
+  },
+  {
+    path : 'contact',
+    component: ContactPageComponent,
+  },
+  {
+    path : 'countries',
+    //esto es para cargar el modulo cuando entre a esa ruta
+    loadChildren: () => import ('./countries/countries.module').then(modulo => modulo.CountriesModule)
   },
   {
     path: '**',
-    redirectTo: 'home'
-  }
+    redirectTo: ''
+  },
+
 ];
 
 @NgModule({
