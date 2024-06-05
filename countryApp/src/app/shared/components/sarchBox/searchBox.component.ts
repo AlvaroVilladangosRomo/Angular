@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 
 @Component({
     selector: 'shared-search-box',
@@ -9,7 +9,19 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 })
 export class SearchBoxComponent {
 
+  @ViewChild('txtInput')
+  public txtInput!: ElementRef<HTMLInputElement>;
+
   @Input()
 public placeholder: string = '';
-}
 
+
+  @Output()
+  public onValue = new EventEmitter<string>;
+
+
+  emitValue( ) : void {
+    this.onValue.emit( this.txtInput.nativeElement.value);
+    this.txtInput.nativeElement.value = '';
+}
+}
