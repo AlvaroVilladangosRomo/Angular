@@ -44,7 +44,8 @@ export class MenuComponent {
         items: [
 
           {
-            label: "Otro elemento",
+            label: "custom",
+            routerLink: ['/products/custom'],
           }
 
         ]

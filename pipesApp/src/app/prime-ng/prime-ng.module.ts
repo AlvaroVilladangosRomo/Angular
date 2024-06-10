@@ -5,6 +5,9 @@ import {Menubar, MenubarModule} from 'primeng/menubar';
 import {CardModule} from 'primeng/card';
 import {PanelModule} from 'primeng/panel';
 import {FieldsetModule} from 'primeng/fieldset';
+import {ToolbarModule} from 'primeng/toolbar';
+import {TableModule} from 'primeng/table';
+
 
 
 
@@ -17,6 +20,8 @@ import {FieldsetModule} from 'primeng/fieldset';
     CardModule,
     PanelModule,
     FieldsetModule,
+    ToolbarModule,
+    TableModule,
   ]
 })
 export class PrimeNgModule { }
